@@ -22,6 +22,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8d91f3e5-56ad-4145-a58e-f9a2254ff861"
+      }
+    },
+    "owner": "tinajuresko",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/8d91f3e5-56ad-4145-a58e-f9a2254ff861"
     }
   }
 }
