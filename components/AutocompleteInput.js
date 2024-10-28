@@ -16,16 +16,21 @@ const AutocompleteInput = ({ onSelect, onClear }) => {
       }
 
       setLoading(true);
-      fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}&accept-language=en`)
-        .then(response => response.json())
-        .then(data => {
-          setSuggestions(data);
-          setLoading(false);
-        })
-        .catch(error => {
-          console.error('Error fetching suggestions:', error);
-          setLoading(false);
-        });
+      fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}&accept-language=en`, {
+        headers: {
+          'User-Agent': 'MyApp/1.0'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log("Raw API response:", data);
+        setSuggestions(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching suggestions:', error);
+        setLoading(false);
+      });
     }, 400),
     []
   );
