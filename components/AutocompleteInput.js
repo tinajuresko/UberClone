@@ -18,7 +18,7 @@ const AutocompleteInput = ({ onSelect, onClear }) => {
       setLoading(true);
       fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}&accept-language=en`, {
         headers: {
-          'User-Agent': 'MyApp/1.0'
+          'User-Agent': 'MyUber/1.0'
         }
       })
       .then(response => response.json())
